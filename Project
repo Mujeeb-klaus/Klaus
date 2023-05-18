@@ -1,0 +1,27 @@
+import random
+#simple word game
+def get_clues():
+clues = ["-a-s","-h-t","m--s-","-ow-"]
+position = random.randint(1, (len(clues)-
+1)
+clue = clues[position]
+return clue
+def check_guess(clue, guess):
+if len(clue) != len(guess):
+return False
+for i in range(len(clue)):
+if clue[i] != "-" and clue[i] !=
+guess[i]:
+return False
+return True
+word_game = get_clues()
+print("your clue is" ,word_game)
+answer = input("guess your answer: ")
+#redefining
+is_matched = check_guess(word_game, answer)
+
+if is_matched is True:
+print("good")
+
+else:
+print("bad")
